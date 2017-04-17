@@ -19,16 +19,16 @@ public class CompoundInterest {
     for (int i = 1; i < balances.length; i++) {
       for (int j = 0; j < balances[i].length; j++) {
         // get last year's balances from previous row
-        double oldBalance = balance[i-1][j];
+        double oldBalance = balances[i-1][j];
 
         double interest = oldBalance * interestRate[j];
-        balance[i][j] = oldBalance + interest;
+        balances[i][j] = oldBalance + interest;
       }
     }
 
       // print one row of interest rates
     for (int j = 0; j < interestRate.length; j++) {
-      System.out.printf("%9.0f%%", 100 * interest[j]);
+      System.out.printf("%9.0f%%", 100 * interestRate[j]);
     }
 
     System.out.println();
@@ -36,7 +36,7 @@ public class CompoundInterest {
       for (double b : row) {
         System.out.printf("%10.2f", b);
       }
-    System.out.println();
+      System.out.println();
     }
   }
 }
